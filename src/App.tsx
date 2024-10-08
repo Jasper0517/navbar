@@ -14,14 +14,18 @@ export default function App() {
       {/* center */}
       <ul className="hidden lg:inline-block lg:flex lg:grow lg:items-center lg:gap-8">
         {list.map((item) => (
-          <li className="cursor-pointer text-base font-medium text-neutral-600">
+          <li className="cursor-pointer text-base font-medium text-neutral-600 hover:text-black">
             {item}
           </li>
         ))}
       </ul>
       {/* right */}
       <div className="flex justify-center gap-5">
-        <img src={notify} alt="notify" className="h-[24px] w-[24px]" />
+        <img
+          src={notify}
+          alt="notify"
+          className="h-[24px] w-[24px] lg:cursor-pointer"
+        />
         <div
           className="relative text-[20px] font-black before:absolute before:top-[-8px] before:text-[20px] before:content-['━'] after:absolute after:bottom-[-6px] after:left-0 after:text-[20px] after:content-['━'] lg:hidden"
           onClick={() => setIsSideMenuOpen(!isSideMenuOpen)}
@@ -30,10 +34,9 @@ export default function App() {
         </div>
       </div>
       {isSideMenuOpen && (
-        <div className="absolute left-0 top-0 h-screen w-screen bg-white px-4">
-          <div className="absolute right-0 top-0 h-full w-5 bg-neutral-950"></div>
+        <div className="animate-navbar-menu fixed left-0 top-0 h-screen w-screen max-w-[400px] bg-white px-4">
           {/* top */}
-          <div className="flex justify-between py-8 pr-5">
+          <div className="flex justify-between py-8">
             <img src={logo} alt="StyleNest" className="h-[32px] w-[105px]" />
             <img
               src={close}

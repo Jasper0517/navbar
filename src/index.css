@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom animations and keyframes */
+@keyframes navbar-menu {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.animate-navbar-menu {
+  animation: navbar-menu 0.4s ease-out;
+}
